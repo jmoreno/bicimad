@@ -23,6 +23,13 @@ var text = new UI.Text({
   backgroundColor: 'black'
 });
 
+var distancia = Settings.data('distancia');
+
+if (!distancia) {
+  distancia = 150;
+  Settings.data('distancia', distancia);
+}
+
 /* ESTA ES LA ZONA DONDE ESTÁN LAS FUNCIONES NECESARIAS PARA LA GEOLOCALIZACIÓN
    Y LA BUSQUEDA DE LOS TIEMPOS DE ESPERA DE LAS PARADAS */
 
@@ -129,7 +136,7 @@ var paradasCercanas = function () {
   };
 
   function locationSuccess(pos) {
-    var stopsURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stops?latitude=' + pos.coords.latitude + '&longitude=' + pos.coords.longitude + '&radius=150';
+    var stopsURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stops?latitude=' + pos.coords.latitude + '&longitude=' + pos.coords.longitude + '&radius=' + distancia;
 //    stopsURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stops?latitude=40.413897&longitude=-3.692898&radius=250';
     paradas(
       {
@@ -198,34 +205,63 @@ var paradasFavoritas = function() {
   
   var favoritos = Settings.data('favoritos');
   
-  var paradasMenuItems = parseaParadas(favoritos);
+  if (!favoritos || favoritos.length == 0) {
+
+    text.text('No hay favoritos guardados');
+    splashWindow.add(text);
+    splashWindow.show();
+
+  } else {
+
+    var paradasMenuItems = parseaParadas(favoritos);
     
-  var paradasMenu = new UI.Menu({
-    sections: [{
-      title: 'Paradas cercanas',
-      items: paradasMenuItems
-    }]
-  }); 
+    var paradasMenu = new UI.Menu({
+      sections: [{
+        title: 'Paradas cercanas',
+        items: paradasMenuItems
+      }]
+    }); 
     
-  paradasMenu.on('select', function(e) {
-    var parada = favoritos[e.itemIndex];
-    proximasLlegadas(parada);
-  });
+    paradasMenu.on('select', function(e) {
+      var parada = favoritos[e.itemIndex];
+      proximasLlegadas(parada);
+    });
   
-  paradasMenu.show();
-      
+    paradasMenu.show();
+       
+  }
+  
 };
 
 
 var verAjustes = function() {
+
+  var subtitle = distancia + ' metros';
   var ajustesCard = new UI.Card({
     title: 'Distancia máxima:',
-    subtitle: '150 metros',
+    subtitle: subtitle,
+    body: '[0-500 metros]',
     action: {
       up: 'images/action_icon_plus.png',
       select: 'images/action_icon_check.png',
       down: 'images/action_icon_minus.png'
     }
+  });
+  ajustesCard.on('click', 'up', function(){
+    if (distancia < 500) {
+      distancia += 10;
+      ajustesCard.subtitle(distancia + ' metros');
+    }
+  });
+  ajustesCard.on('click', 'down', function(){
+    if (distancia > 0) {
+      distancia -= 10;
+      ajustesCard.subtitle(distancia + ' metros');
+    }
+  });
+  ajustesCard.on('click', 'select', function(){
+    Settings.data('distancia', distancia);
+    ajustesCard.hide();
   });
   ajustesCard.show();
 };
