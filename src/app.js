@@ -170,17 +170,37 @@ var paradasCercanas = function () {
             if (!favoritos) {
               favoritos = [];
             }
-
+            
             var parada = stops[e.itemIndex];
-            favoritos.push(parada);
-            Settings.data('favoritos', favoritos);
+
+            var favoritoCard = new UI.Card({
+              title: 'Guardar parada',
+              subtitle: parada.stopId,
+              action: {
+                up: 'images/action_icon_discard.png',
+                down: 'images/action_icon_check.png'
+              }
+            });
+            
+            favoritoCard.on('click', 'up', function(){
+              favoritoCard.hide();
+            });
+            
+            favoritoCard.on('click', 'down', function(){
+              favoritos.push(parada);
+              Settings.data('favoritos', favoritos);
+              favoritoCard.hide();
+            });
+            
+            favoritoCard.show();
+
           });
       
           paradasMenu.show();
           splashWindow.hide();
 
         } else {
-          text.text('No hay ninguna parada en un radio de 150 metros');
+          text.text('No hay ninguna parada en un radio de ' + distancia + ' metros');
         }
       },
       function(error) {
@@ -205,7 +225,7 @@ var paradasFavoritas = function() {
   
   var favoritos = Settings.data('favoritos');
   
-  if (!favoritos || favoritos.length == 0) {
+  if (!favoritos || favoritos.length === 0) {
 
     text.text('No hay favoritos guardados');
     splashWindow.add(text);
@@ -217,7 +237,7 @@ var paradasFavoritas = function() {
     
     var paradasMenu = new UI.Menu({
       sections: [{
-        title: 'Paradas cercanas',
+        title: 'Favoritas',
         items: paradasMenuItems
       }]
     }); 
@@ -225,6 +245,39 @@ var paradasFavoritas = function() {
     paradasMenu.on('select', function(e) {
       var parada = favoritos[e.itemIndex];
       proximasLlegadas(parada);
+    });
+    
+    paradasMenu.on('longSelect', function(e) {
+      var parada = favoritos[e.itemIndex];
+
+      var favoritoCard = new UI.Card({
+        title: 'Borrar parada',
+        subtitle: parada.stopId,
+        action: {
+          up: 'images/action_icon_discard.png',
+         down: 'images/action_icon_check.png'
+        }
+      });
+            
+      favoritoCard.on('click', 'up', function(){
+        favoritoCard.hide();
+      });
+            
+      favoritoCard.on('click', 'down', function(){
+        favoritos.splice(e.itemIndex, 1);
+        paradasMenuItems.splice(e.itemIndex, 1);
+        Settings.data('favoritos', favoritos);
+        paradasMenu.items(0, paradasMenuItems);
+        favoritoCard.hide();
+        
+        if (favoritos.length === 0) {
+          paradasMenu.hide();
+        }
+        
+      });
+            
+      favoritoCard.show();
+
     });
   
     paradasMenu.show();
@@ -236,11 +289,11 @@ var paradasFavoritas = function() {
 
 var verAjustes = function() {
 
-  var subtitle = distancia + ' metros';
+  var nuevaDistancia = distancia;
+  var subtitle = nuevaDistancia + ' metros';
   var ajustesCard = new UI.Card({
-    title: 'Distancia máxima:',
+    title: 'Radio de busqueda:',
     subtitle: subtitle,
-    body: '[0-500 metros]',
     action: {
       up: 'images/action_icon_plus.png',
       select: 'images/action_icon_check.png',
@@ -248,18 +301,19 @@ var verAjustes = function() {
     }
   });
   ajustesCard.on('click', 'up', function(){
-    if (distancia < 500) {
-      distancia += 10;
-      ajustesCard.subtitle(distancia + ' metros');
+    if (nuevaDistancia < 500) {
+      nuevaDistancia += 10;
+      ajustesCard.subtitle(nuevaDistancia + ' metros');
     }
   });
   ajustesCard.on('click', 'down', function(){
-    if (distancia > 0) {
-      distancia -= 10;
-      ajustesCard.subtitle(distancia + ' metros');
+    if (nuevaDistancia > 100) {
+      nuevaDistancia -= 10;
+      ajustesCard.subtitle(nuevaDistancia + ' metros');
     }
   });
   ajustesCard.on('click', 'select', function(){
+    distancia = nuevaDistancia;
     Settings.data('distancia', distancia);
     ajustesCard.hide();
   });
@@ -271,13 +325,16 @@ var verAjustes = function() {
 
 var principalMenu = new UI.Menu({
   sections: [{
-    title: 'Madrid Bus',
+    title: 'Paradas de la EMT',
     items: [{
-      title: 'Paradas cercanas'
+      title: 'Cercanas',
+      icon: 'images/menu_icon_location.png'
     }, {
-      title: 'Favoritos'
+      title: 'Favoritas',
+      icon: 'images/menu_icon_starred.png'
     }, {
-      title: 'Ajustes'
+      title: 'Ajustes',
+      icon: 'images/menu_icon_settings.png'
     }]
   }]
 });

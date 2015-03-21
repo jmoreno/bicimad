@@ -3,14 +3,13 @@
     "capabilities": [
         "location"
     ],
-    "companyName": "jmoreno.zn@gmail.com",
-    "longName": "MADBus",
+    "companyName": "Zink In Apps!",
+    "longName": "MadridBus Pro",
     "projectType": "pebblejs",
     "resources": {
         "media": [
             {
                 "file": "images/menu_icon.png",
-                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "png"
             },
@@ -30,13 +29,29 @@
                 "type": "font"
             },
             {
-                "file": "images/action_icon_plus.png",
-                "name": "IMAGES_ACTION_ICON_PLUS_PNG",
+                "file": "images/main_icon_bus.png",
+                "menuIcon": true,
+                "name": "IMAGES_MAIN_ICON_BUS_PNG",
                 "type": "png"
             },
             {
-                "file": "images/action_icon_minus.png",
-                "name": "IMAGES_ACTION_ICON_MINUS_PNG",
+                "file": "images/menu_icon_starred.png",
+                "name": "IMAGES_MENU_ICON_STARRED_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/menu_icon_settings.png",
+                "name": "IMAGES_MENU_ICON_SETTINGS_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/menu_icon_location.png",
+                "name": "IMAGES_MENU_ICON_LOCATION_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/action_icon_check.png",
+                "name": "IMAGES_ACTION_ICON_CHECK_PNG",
                 "type": "png"
             },
             {
@@ -45,14 +60,19 @@
                 "type": "png"
             },
             {
-                "file": "images/action_icon_check.png",
-                "name": "IMAGES_ACTION_ICON_CHECK_PNG",
+                "file": "images/action_icon_minus.png",
+                "name": "IMAGES_ACTION_ICON_MINUS_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/action_icon_plus.png",
+                "name": "IMAGES_ACTION_ICON_PLUS_PNG",
                 "type": "png"
             }
         ]
     },
-    "shortName": "MADBus",
-    "uuid": "0e676bc7-976c-49ee-8c4e-67675b9af382",
+    "shortName": "MadridBus Pro",
+    "uuid": "5683d63f-fb05-43bf-818e-dc865ca6db50",
     "versionCode": 1,
     "versionLabel": "1.0",
     "watchapp": {
