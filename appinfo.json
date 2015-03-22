@@ -29,6 +29,11 @@
                 "type": "font"
             },
             {
+                "file": "images/action_icon_next.png",
+                "name": "IMAGES_ACTION_ICON_NEXT_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/menu_icon_search.png",
                 "name": "IMAGES_MENU_ICON_SEARCH_PNG",
                 "type": "png"

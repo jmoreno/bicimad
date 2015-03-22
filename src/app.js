@@ -333,7 +333,7 @@ var searchWindow = function () {
   
   var title = new UI.Text({
     position: new Vector2(0, 10),         
-    size: new Vector2(144, 168),
+    size: new Vector2(123, 168),
     text: 'Parada',
     font: 'GOTHIC_28_BOLD',
     color: 'white',
@@ -343,14 +343,17 @@ var searchWindow = function () {
   });
   
   inputWindow.add(title);
+  inputWindow.action('up', 'images/action_icon_plus.png');
+  inputWindow.action('down', 'images/action_icon_minus.png');
+  inputWindow.action('select', 'images/action_icon_check.png');
 
   for (var i = 0; i < 4; i++) {
-    begin = 7 + (i * 33);
+      begin = 7 + (i * 28);
     var number = new UI.Text({
       position: new Vector2(begin, 60),
-      size: new Vector2(30, 40),
+      size: new Vector2(25, 40),
       text: stopId[i],
-      font: 'bitham-30-black',
+      font: 'GOTHIC_28_BOLD',
       color: 'white',
       textAlign: 'center',
       borderColor: 'white',
@@ -426,6 +429,14 @@ var searchWindow = function () {
       numbers[numberSelected].color('black');
       numbers[numberSelected].backgroundColor('white');    
     }
+  });
+  
+  inputWindow.on('longClick', 'select', function () {
+    numbers[numberSelected].color('white');
+    numbers[numberSelected].backgroundColor('black');
+    numberSelected = 0;
+    numbers[numberSelected].color('black');
+    numbers[numberSelected].backgroundColor('white');    
   });
   
 };
