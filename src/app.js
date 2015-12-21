@@ -9,6 +9,7 @@ var paradas = require('ajax');
 var llegadas = require('ajax');
 var Vector2  = require('vector2');
 var Settings = require('settings');
+var Voice = require('ui/voice');
 
 var splashWindow = new UI.Window();
 
