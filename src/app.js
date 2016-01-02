@@ -469,16 +469,20 @@ var principalMenu = new UI.Menu({
     title: 'Paradas de la EMT',
     items: [{
       title: 'Cercanas',
-      icon: 'images/menu_icon_location.png'
+      icon: 'images/menu_icon_location.png',
+      borderColor: 'black'
     }, {
       title: 'Favoritas',
-      icon: 'images/menu_icon_starred.png'
+      icon: 'images/menu_icon_starred.png',
+      borderColor: 'black'
     }, {
       title: 'Buscar',
-      icon: 'images/menu_icon_search.png'
+      icon: 'images/menu_icon_search.png',
+      borderColor: 'black'
     }, {
       title: 'Ajustes',
-      icon: 'images/menu_icon_settings.png'
+      icon: 'images/menu_icon_settings.png',
+      borderColor: 'black'
     }]
   }]
 });

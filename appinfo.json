@@ -84,11 +84,12 @@
     "sdkVersion": "3",
     "shortName": "MadridBus Pro",
     "targetPlatforms": [
-        "aplite"
+        "aplite",
+        "basalt"
     ],
     "uuid": "5683d63f-fb05-43bf-818e-dc865ca6db50",
     "versionCode": 1,
-    "versionLabel": "1.0",
+    "versionLabel": "1.2",
     "watchapp": {
         "watchface": false
     }
