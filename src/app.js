@@ -86,7 +86,7 @@ var parseaLlegadas = function (data) {
 
 // llamada inicial para arrancar el servidor
 
-var wakeUpHAL = function () {
+function wakeUpHAL() {
   
   var checkURL = 'http://zinkinapis.zinkinapps.com/HelloHALDoyoureadmeHAL';
   check(
