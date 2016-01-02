@@ -86,7 +86,7 @@ var parseaLlegadas = function (data) {
 
 // llamada inicial para arrancar el servidor
 
-function wakeUpHAL() {
+var wakeUpHAL = function () {
   
   var checkURL = 'http://zinkinapis.zinkinapps.com/HelloHALDoyoureadmeHAL';
   check(
@@ -95,14 +95,14 @@ function wakeUpHAL() {
       type: 'json'
     },
     function(data) {
-      console.log(data);
+      console.log('todo bien, gracias');
     },
     function(error){
       console.log('Ha ocurrido un error al despertar a HAL: ' + error);
     }
   );
 };
--
+
 
 var proximasLlegadas = function (Parada) {
   
