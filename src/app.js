@@ -5,6 +5,7 @@
  */
 
 var UI = require('ui');
+var check = require('ajax');
 var paradas = require('ajax');
 var llegadas = require('ajax');
 var Vector2  = require('vector2');
@@ -83,6 +84,25 @@ var parseaLlegadas = function (data) {
   return items;
 };
 
+// llamada inicial para arrancar el servidor
+
+var wakeUpHAL = function () {
+  
+  var checkURL = 'http://zinkinapis.zinkinapps.com/HelloHALDoyoureadmeHAL';
+  check(
+    {
+      url: checkURL,
+      type: 'json'
+    },
+    function(data) {
+      console.log(data);
+    },
+    function(error){
+      console.log('Ha ocurrido un error al despertar a HAL: ' + error);
+    }
+  );
+};
+-
 
 var proximasLlegadas = function (Parada) {
   
@@ -486,4 +506,5 @@ principalMenu.on('select', function(e) {
   }
 });
       
+wakeUpHAL();      
 principalMenu.show();
