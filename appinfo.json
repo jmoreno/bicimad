@@ -84,8 +84,7 @@
     "sdkVersion": "3",
     "shortName": "MadridBus Pro",
     "targetPlatforms": [
-        "aplite",
-        "basalt"
+        "aplite"
     ],
     "uuid": "5683d63f-fb05-43bf-818e-dc865ca6db50",
     "versionCode": 1,

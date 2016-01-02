@@ -369,7 +369,7 @@ var searchWindow = function () {
   inputWindow.action('select', 'images/action_icon_check.png');
 
   for (var i = 0; i < 4; i++) {
-      begin = 7 + (i * 28);
+      begin = 7 + (i * 27);
     var number = new UI.Text({
       position: new Vector2(begin, 60),
       size: new Vector2(25, 40),
@@ -469,20 +469,16 @@ var principalMenu = new UI.Menu({
     title: 'Paradas de la EMT',
     items: [{
       title: 'Cercanas',
-      icon: 'images/menu_icon_location.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_location.png'
     }, {
       title: 'Favoritas',
-      icon: 'images/menu_icon_starred.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_starred.png'
     }, {
       title: 'Buscar',
-      icon: 'images/menu_icon_search.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_search.png'
     }, {
       title: 'Ajustes',
-      icon: 'images/menu_icon_settings.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_settings.png'
     }]
   }]
 });
