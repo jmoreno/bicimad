@@ -1,7 +1,7 @@
 {
     "appKeys": {},
     "capabilities": [
-        "location"
+        "location", "configurable"
     ],
     "companyName": "Zink In Apps!",
     "longName": "MadridBus Pro",
@@ -84,7 +84,8 @@
     "sdkVersion": "3",
     "shortName": "MadridBus Pro",
     "targetPlatforms": [
-        "aplite"
+        "aplite",
+        "basalt"
     ],
     "uuid": "5683d63f-fb05-43bf-818e-dc865ca6db50",
     "versionCode": 1,

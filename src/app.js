@@ -369,7 +369,7 @@ var searchWindow = function () {
   inputWindow.action('select', 'images/action_icon_check.png');
 
   for (var i = 0; i < 4; i++) {
-      begin = 7 + (i * 27);
+      begin = 7 + (i * 28);
     var number = new UI.Text({
       position: new Vector2(begin, 60),
       size: new Vector2(25, 40),
