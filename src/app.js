@@ -465,26 +465,30 @@ var searchWindow = function () {
 // ESTA ES LA ZONA DONDE SE DEFINE E INSTANCIA EL MENÚ PRINCIPAL
 
 var principalMenu = new UI.Menu({
+  backgroundColor: 'white',
+  textColor: 'black',
+  highlightBackgroundColor: 'blue',
+  highlightTextColor: 'white',
   sections: [{
     title: 'Paradas de la EMT',
     items: [{
       title: 'Cercanas',
-      icon: 'images/menu_icon_location.png'
+      icon: 'images/menu_icon_location.png',
+      borderColor: 'black'
     }, {
       title: 'Favoritas',
-      icon: 'images/menu_icon_starred.png'
+      icon: 'images/menu_icon_starred.png',
+      borderColor: 'black'
     }, {
       title: 'Buscar',
-      icon: 'images/menu_icon_search.png'
+      icon: 'images/menu_icon_search.png',
+      borderColor: 'black'
     }, {
       title: 'Ajustes',
-      icon: 'images/menu_icon_settings.png'
+      icon: 'images/menu_icon_settings.png',
+      borderColor: 'black'
     }]
-  }],
-  backgroundColor: 'white',
-  textColor: 'black',
-  highlightBackgroundColor: 'blue',
-  highlightTextColor: 'white'
+  }]
 });
 
 principalMenu.on('select', function(e) {
