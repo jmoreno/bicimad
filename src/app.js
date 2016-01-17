@@ -120,6 +120,10 @@ var proximasLlegadas = function (Parada) {
       if ('arrives' in data) {
         var llegadasMenuItems = parseaLlegadas(data);
         var llegadasMenu = new UI.Menu({
+        	backgroundColor: 'white',
+        	textColor: 'black',
+        	highlightBackgroundColor: 'red',
+        	highlightTextColor: 'white',
           sections: [{
             title: 'Datos de la parada',
             items: [{title: Parada.stopId, subtitle: Parada.postalAddress}]
@@ -175,6 +179,10 @@ var paradasCercanas = function () {
           var paradasMenuItems = parseaParadas(stops);
     
           var paradasMenu = new UI.Menu({
+			backgroundColor: 'white',
+			textColor: 'black',
+			highlightBackgroundColor: 'red',
+			highlightTextColor: 'white',
             sections: [{
               title: 'Paradas cercanas',
               items: paradasMenuItems
@@ -467,26 +475,22 @@ var searchWindow = function () {
 var principalMenu = new UI.Menu({
   backgroundColor: 'white',
   textColor: 'black',
-  highlightBackgroundColor: 'blue',
+  highlightBackgroundColor: 'red',
   highlightTextColor: 'white',
   sections: [{
     title: 'Paradas de la EMT',
     items: [{
       title: 'Cercanas',
-      icon: 'images/menu_icon_location.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_location.png'
     }, {
       title: 'Favoritas',
-      icon: 'images/menu_icon_starred.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_starred.png'
     }, {
       title: 'Buscar',
-      icon: 'images/menu_icon_search.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_search.png'
     }, {
       title: 'Ajustes',
-      icon: 'images/menu_icon_settings.png',
-      borderColor: 'black'
+      icon: 'images/menu_icon_settings.png'
     }]
   }]
 });
