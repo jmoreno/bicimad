@@ -349,7 +349,7 @@ var searchWindow = function () {
 
   var numbers = [];
   var stopId = [0, 0, 0, 0];
-  var begin = 7;
+  var begin = 6;
   var numberSelected = 0;
   
   var title = new UI.Text({
@@ -369,7 +369,7 @@ var searchWindow = function () {
   inputWindow.action('select', 'images/action_icon_check.png');
 
   for (var i = 0; i < 4; i++) {
-      begin = 7 + (i * 28);
+      begin = 6 + (i * 28);
     var number = new UI.Text({
       position: new Vector2(begin, 60),
       size: new Vector2(25, 40),
@@ -480,7 +480,11 @@ var principalMenu = new UI.Menu({
       title: 'Ajustes',
       icon: 'images/menu_icon_settings.png'
     }]
-  }]
+  }],
+  backgroundColor: 'white',
+  textColor: 'black',
+  highlightBackgroundColor: 'blue',
+  highlightTextColor: 'white'
 });
 
 principalMenu.on('select', function(e) {
