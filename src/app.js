@@ -16,14 +16,14 @@ var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
 
 var text = new UI.Text({
-  	position: new Vector2(0, 0),         
+  	position: new Vector2(0, 4),         
   	size: new Vector2(144, 168),
   	text: 'Buscando paradas cercanas',
   	font: 'GOTHIC_28_BOLD',
   	color: 'white',
   	textOverflow: 'wrap',
   	textAlign: 'center',
-  	backgroundColor: 'black'
+  	backgroundColor: 'blueMoon'
 });
 
 var distancia = Settings.data('distancia');
@@ -383,7 +383,7 @@ var searchWindow = function () {
     color: 'white',
     textOverflow: 'wrap',
     textAlign: 'center',
-    backgroundColor: 'black'
+    backgroundColor: 'blueMoon'
   });
   
   inputWindow.add(title);
@@ -402,12 +402,12 @@ var searchWindow = function () {
       color: 'white',
       textAlign: 'center',
       borderColor: 'white',
-      backgroundColor: 'black'
+      backgroundColor: 'blueMoon'
     });
     numbers.push(number);
   }
 
-  numbers[numberSelected].color('black');
+  numbers[numberSelected].color('blueMoon');
   numbers[numberSelected].backgroundColor('white');
 
   for (i = 0; i < 4; i++) {
@@ -450,9 +450,9 @@ var searchWindow = function () {
             
       checkCard.on('click', 'up', function(){
         numbers[numberSelected].color('white');
-        numbers[numberSelected].backgroundColor('black');
+        numbers[numberSelected].backgroundColor('blueMoon');
         numberSelected = 0;
-        numbers[numberSelected].color('black');
+        numbers[numberSelected].color('blueMoon');
         numbers[numberSelected].backgroundColor('white');    
         checkCard.hide();
       });
@@ -471,18 +471,18 @@ var searchWindow = function () {
   
     } else {
       numbers[numberSelected].color('white');
-      numbers[numberSelected].backgroundColor('black');
+      numbers[numberSelected].backgroundColor('blueMoon');
       numberSelected += 1;
-      numbers[numberSelected].color('black');
+      numbers[numberSelected].color('blueMoon');
       numbers[numberSelected].backgroundColor('white');    
     }
   });
   
   inputWindow.on('longClick', 'select', function () {
     numbers[numberSelected].color('white');
-    numbers[numberSelected].backgroundColor('black');
+    numbers[numberSelected].backgroundColor('blueMoon');
     numberSelected = 0;
-    numbers[numberSelected].color('black');
+    numbers[numberSelected].color('blueMoon');
     numbers[numberSelected].backgroundColor('white');    
   });
   
