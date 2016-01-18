@@ -13,7 +13,7 @@ var Settings = require('settings');
 var Voice = require('ui/voice');
 
 var splashWindow = new UI.Window();
-splashWindow.fullscreen = true;
+splashWindow.fullscreen(true);
 
 var text = new UI.Text({
   	position: new Vector2(0, 0),         
@@ -368,7 +368,7 @@ var verAjustes = function() {
 var searchWindow = function () {
   
   var inputWindow = new UI.Window();
-  inputWindow.fullscreen = true;
+  inputWindow.fullscreen(fullscreen);
 
   var numbers = [];
   var stopId = [0, 0, 0, 0];
