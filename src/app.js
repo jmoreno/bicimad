@@ -22,7 +22,7 @@ var text = new UI.Text({
   color: 'white',
   textOverflow: 'wrap',
   textAlign: 'center',
-  backgroundColor: 'black'
+  backgroundColor: 'cyan'
 });
 
 var distancia = Settings.data('distancia');
@@ -183,7 +183,7 @@ var paradasCercanas = function () {
           	fullscreen: true,
 			backgroundColor: 'white',
 			textColor: 'black',
-			highlightBackgroundColor: 'red',
+			highlightBackgroundColor: 'blueMoon',
 			highlightTextColor: 'white',
             sections: [{
               title: 'Paradas cercanas',
@@ -206,13 +206,13 @@ var paradasCercanas = function () {
 
             var favoritoCard = new UI.Card({
             	fullscreen: true,
-            	backgroundColor: 'orange',
-              title: 'Guardar parada',
-              subtitle: parada.stopId,
-              action: {
-                up: 'images/action_icon_discard.png',
-                down: 'images/action_icon_check.png'
-              }
+            	backgroundColor: 'blueMoon',
+	            title: 'Guardar parada',
+                subtitle: parada.stopId,
+                action: {
+                	up: 'images/action_icon_discard.png',
+                	down: 'images/action_icon_check.png'
+              	}
             });
             
             favoritoCard.on('click', 'up', function(){
@@ -272,7 +272,7 @@ var paradasFavoritas = function() {
     	fullscreen: true,
     	backgroundColor: 'white',
         textColor: 'black',
-        highlightBackgroundColor: 'green',
+        highlightBackgroundColor: 'blueMoon',
         highlightTextColor: 'white',
       	sections: [{
       		title: 'Favoritas',
@@ -290,7 +290,7 @@ var paradasFavoritas = function() {
 
       var favoritoCard = new UI.Card({
       	fullscreen: true,
-      	backgroundColor: 'magenta',
+      	backgroundColor: 'blueMoon',
         title: 'Borrar parada',
         subtitle: parada.stopId,
         action: {
@@ -333,7 +333,7 @@ var verAjustes = function() {
   var subtitle = nuevaDistancia + ' metros';
   var ajustesCard = new UI.Card({
   	fullscreen: true,
-  	backgroundColor: 'purple',
+  	backgroundColor: 'blueMoon',
     title: 'Radio de busqueda:',
     subtitle: subtitle,
     action: {
@@ -370,7 +370,7 @@ var searchWindow = function () {
 
   var numbers = [];
   var stopId = [0, 0, 0, 0];
-  var begin = 6;
+  var begin = 5;
   var numberSelected = 0;
   
   var title = new UI.Text({
@@ -381,7 +381,7 @@ var searchWindow = function () {
     color: 'white',
     textOverflow: 'wrap',
     textAlign: 'center',
-    backgroundColor: 'black'
+    backgroundColor: 'cyan'
   });
   
   inputWindow.add(title);
@@ -390,7 +390,7 @@ var searchWindow = function () {
   inputWindow.action('select', 'images/action_icon_check.png');
 
   for (var i = 0; i < 4; i++) {
-      begin = 6 + (i * 28);
+      begin = 5 + (i * 28);
     var number = new UI.Text({
       position: new Vector2(begin, 60),
       size: new Vector2(25, 40),
@@ -399,7 +399,7 @@ var searchWindow = function () {
       color: 'white',
       textAlign: 'center',
       borderColor: 'white',
-      backgroundColor: 'black'
+      backgroundColor: 'cyan'
     });
     numbers.push(number);
   }
@@ -491,7 +491,7 @@ var principalMenu = new UI.Menu({
 	fullscreen: true,
   backgroundColor: 'white',
   textColor: 'black',
-  highlightBackgroundColor: 'fashionMagenta',
+  highlightBackgroundColor: 'blueMoon',
   highlightTextColor: 'white',
   sections: [{
     title: 'Paradas de la EMT',
