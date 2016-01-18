@@ -368,7 +368,7 @@ var verAjustes = function() {
 var searchWindow = function () {
   
   var inputWindow = new UI.Window();
-  inputWindow.fullscreen(fullscreen);
+  inputWindow.fullscreen(true);
 
   var numbers = [];
   var stopId = [0, 0, 0, 0];
