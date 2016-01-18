@@ -22,7 +22,7 @@ var text = new UI.Text({
   color: 'white',
   textOverflow: 'wrap',
   textAlign: 'center',
-  backgroundColor: 'cyan'
+  backgroundColor: 'black'
 });
 
 var distancia = Settings.data('distancia');
@@ -381,7 +381,7 @@ var searchWindow = function () {
     color: 'white',
     textOverflow: 'wrap',
     textAlign: 'center',
-    backgroundColor: 'cyan'
+    backgroundColor: 'black'
   });
   
   inputWindow.add(title);
@@ -399,7 +399,7 @@ var searchWindow = function () {
       color: 'white',
       textAlign: 'center',
       borderColor: 'white',
-      backgroundColor: 'cyan'
+      backgroundColor: 'black'
     });
     numbers.push(number);
   }
@@ -436,7 +436,7 @@ var searchWindow = function () {
       var parada = stopId[0] * 1000 + stopId[1] * 100 + stopId[2] * 10 + stopId[3];
       var checkCard = new UI.Card({
       	fullscreen: true,
-      	backgroundColor: 'cyan',
+      	backgroundColor: 'black',
         title: 'Próximas llegadas a parada:',
         subtitle: parada,
         action: {
