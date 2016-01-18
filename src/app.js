@@ -439,8 +439,7 @@ var searchWindow = function () {
       var parada = stopId[0] * 1000 + stopId[1] * 100 + stopId[2] * 10 + stopId[3];
       var checkCard = new UI.Card({
       	fullscreen: true,
-      	color: 'white',
-      	backgroundColor: 'black',
+      	backgroundColor: 'blueMoon',
         title: 'Próximas llegadas a parada:',
         subtitle: parada,
         action: {
