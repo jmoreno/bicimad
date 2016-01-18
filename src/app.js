@@ -120,6 +120,7 @@ var proximasLlegadas = function (Parada) {
       if ('arrives' in data) {
         var llegadasMenuItems = parseaLlegadas(data);
         var llegadasMenu = new UI.Menu({
+        	fullscreen: true,
         	backgroundColor: 'white',
         	textColor: 'black',
         	highlightBackgroundColor: 'red',
@@ -179,6 +180,7 @@ var paradasCercanas = function () {
           var paradasMenuItems = parseaParadas(stops);
     
           var paradasMenu = new UI.Menu({
+          	fullscreen: true,
 			backgroundColor: 'white',
 			textColor: 'black',
 			highlightBackgroundColor: 'red',
@@ -203,6 +205,7 @@ var paradasCercanas = function () {
             var parada = stops[e.itemIndex];
 
             var favoritoCard = new UI.Card({
+            	fullscreen: true,
               title: 'Guardar parada',
               subtitle: parada.stopId,
               action: {
@@ -265,9 +268,14 @@ var paradasFavoritas = function() {
     var paradasMenuItems = parseaParadas(favoritos);
     
     var paradasMenu = new UI.Menu({
-      sections: [{
-        title: 'Favoritas',
-        items: paradasMenuItems
+    	fullscreen: true,
+    	backgroundColor: 'white',
+        textColor: 'black',
+        highlightBackgroundColor: 'red',
+        highlightTextColor: 'white',
+      	sections: [{
+      		title: 'Favoritas',
+      		items: paradasMenuItems
       }]
     }); 
     
@@ -280,6 +288,7 @@ var paradasFavoritas = function() {
       var parada = favoritos[e.itemIndex];
 
       var favoritoCard = new UI.Card({
+      	fullscreen: true,
         title: 'Borrar parada',
         subtitle: parada.stopId,
         action: {
@@ -321,6 +330,7 @@ var verAjustes = function() {
   var nuevaDistancia = distancia;
   var subtitle = nuevaDistancia + ' metros';
   var ajustesCard = new UI.Card({
+  	fullscreen: true,
     title: 'Radio de busqueda:',
     subtitle: subtitle,
     action: {
@@ -422,6 +432,7 @@ var searchWindow = function () {
     if (numberSelected === 3) {
       var parada = stopId[0] * 1000 + stopId[1] * 100 + stopId[2] * 10 + stopId[3];
       var checkCard = new UI.Card({
+      	fullscreen: true,
         title: 'Próximas llegadas a parada:',
         subtitle: parada,
         action: {
@@ -473,6 +484,7 @@ var searchWindow = function () {
 // ESTA ES LA ZONA DONDE SE DEFINE E INSTANCIA EL MENÚ PRINCIPAL
 
 var principalMenu = new UI.Menu({
+	fullscreen: true,
   backgroundColor: 'white',
   textColor: 'black',
   highlightBackgroundColor: 'red',
