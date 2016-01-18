@@ -15,14 +15,15 @@ var Voice = require('ui/voice');
 var splashWindow = new UI.Window();
 
 var text = new UI.Text({
-  position: new Vector2(0, 0),         
-  size: new Vector2(144, 168),
-  text: 'Buscando paradas cercanas',
-  font: 'GOTHIC_28_BOLD',
-  color: 'white',
-  textOverflow: 'wrap',
-  textAlign: 'center',
-  backgroundColor: 'black'
+	fullscreen: true,
+  	position: new Vector2(0, 0),         
+  	size: new Vector2(144, 168),
+  	text: 'Buscando paradas cercanas',
+  	font: 'GOTHIC_28_BOLD',
+  	color: 'white',
+  	textOverflow: 'wrap',
+  	textAlign: 'center',
+  	backgroundColor: 'black'
 });
 
 var distancia = Settings.data('distancia');
@@ -374,6 +375,7 @@ var searchWindow = function () {
   var numberSelected = 0;
   
   var title = new UI.Text({
+  	fullscreen: true,
     position: new Vector2(0, 10),         
     size: new Vector2(123, 168),
     text: 'Parada',
