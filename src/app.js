@@ -123,7 +123,7 @@ var proximasLlegadas = function (Parada) {
         	fullscreen: true,
         	backgroundColor: 'white',
         	textColor: 'black',
-        	highlightBackgroundColor: 'red',
+        	highlightBackgroundColor: 'blueMoon',
         	highlightTextColor: 'white',
           sections: [{
             title: 'Datos de la parada',
@@ -206,6 +206,7 @@ var paradasCercanas = function () {
 
             var favoritoCard = new UI.Card({
             	fullscreen: true,
+            	backgroundColor: 'orange',
               title: 'Guardar parada',
               subtitle: parada.stopId,
               action: {
@@ -271,7 +272,7 @@ var paradasFavoritas = function() {
     	fullscreen: true,
     	backgroundColor: 'white',
         textColor: 'black',
-        highlightBackgroundColor: 'red',
+        highlightBackgroundColor: 'green',
         highlightTextColor: 'white',
       	sections: [{
       		title: 'Favoritas',
@@ -289,6 +290,7 @@ var paradasFavoritas = function() {
 
       var favoritoCard = new UI.Card({
       	fullscreen: true,
+      	backgroundColor: 'magenta',
         title: 'Borrar parada',
         subtitle: parada.stopId,
         action: {
@@ -331,6 +333,7 @@ var verAjustes = function() {
   var subtitle = nuevaDistancia + ' metros';
   var ajustesCard = new UI.Card({
   	fullscreen: true,
+  	backgroundColor: 'purple',
     title: 'Radio de busqueda:',
     subtitle: subtitle,
     action: {
@@ -433,6 +436,7 @@ var searchWindow = function () {
       var parada = stopId[0] * 1000 + stopId[1] * 100 + stopId[2] * 10 + stopId[3];
       var checkCard = new UI.Card({
       	fullscreen: true,
+      	backgroundColor: 'cyan'
         title: 'Próximas llegadas a parada:',
         subtitle: parada,
         action: {
@@ -487,7 +491,7 @@ var principalMenu = new UI.Menu({
 	fullscreen: true,
   backgroundColor: 'white',
   textColor: 'black',
-  highlightBackgroundColor: 'red',
+  highlightBackgroundColor: 'fashionMagenta',
   highlightTextColor: 'white',
   sections: [{
     title: 'Paradas de la EMT',
