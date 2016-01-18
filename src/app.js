@@ -394,6 +394,7 @@ var searchWindow = function () {
   for (var i = 0; i < 4; i++) {
       begin = 5 + (i * 28);
     var number = new UI.Text({
+      fullscreen: true,
       position: new Vector2(begin, 60),
       size: new Vector2(25, 40),
       text: stopId[i],
