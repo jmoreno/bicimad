@@ -13,9 +13,9 @@ var Settings = require('settings');
 var Voice = require('ui/voice');
 
 var splashWindow = new UI.Window();
+splashWindow.fullscreen = true;
 
 var text = new UI.Text({
-	fullscreen: true,
   	position: new Vector2(0, 0),         
   	size: new Vector2(144, 168),
   	text: 'Buscando paradas cercanas',
@@ -368,6 +368,7 @@ var verAjustes = function() {
 var searchWindow = function () {
   
   var inputWindow = new UI.Window();
+  inputWindow.fullscreen = true;
 
   var numbers = [];
   var stopId = [0, 0, 0, 0];
@@ -375,7 +376,6 @@ var searchWindow = function () {
   var numberSelected = 0;
   
   var title = new UI.Text({
-  	fullscreen: true,
     position: new Vector2(0, 10),         
     size: new Vector2(123, 168),
     text: 'Parada',
