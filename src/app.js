@@ -15,7 +15,7 @@ var Voice = require('ui/voice');
 var splashWindow = new UI.Window();
 
 var text = new UI.Text({
-	fullscreen: false,
+	fullscreen: true,
   	position: new Vector2(0, 0),         
   	size: new Vector2(144, 168),
   	text: 'Buscando paradas cercanas',
@@ -121,7 +121,7 @@ var proximasLlegadas = function (Parada) {
       if ('arrives' in data) {
         var llegadasMenuItems = parseaLlegadas(data);
         var llegadasMenu = new UI.Menu({
-        	fullscreen: false,
+        	fullscreen: true,
         	backgroundColor: 'white',
         	textColor: 'black',
         	highlightBackgroundColor: 'blueMoon',
@@ -181,7 +181,7 @@ var paradasCercanas = function () {
           var paradasMenuItems = parseaParadas(stops);
     
           var paradasMenu = new UI.Menu({
-          	fullscreen: false,
+          	fullscreen: true,
 			backgroundColor: 'white',
 			textColor: 'black',
 			highlightBackgroundColor: 'blueMoon',
@@ -206,7 +206,7 @@ var paradasCercanas = function () {
             var parada = stops[e.itemIndex];
 
             var favoritoCard = new UI.Card({
-            	fullscreen: false,
+            	fullscreen: true,
             	backgroundColor: 'blueMoon',
 	            title: 'Guardar parada',
                 subtitle: parada.stopId,
@@ -270,7 +270,7 @@ var paradasFavoritas = function() {
     var paradasMenuItems = parseaParadas(favoritos);
     
     var paradasMenu = new UI.Menu({
-    	fullscreen: false,
+    	fullscreen: true,
     	backgroundColor: 'white',
         textColor: 'black',
         highlightBackgroundColor: 'blueMoon',
@@ -290,7 +290,7 @@ var paradasFavoritas = function() {
       var parada = favoritos[e.itemIndex];
 
       var favoritoCard = new UI.Card({
-      	fullscreen: false,
+      	fullscreen: true,
       	backgroundColor: 'blueMoon',
         title: 'Borrar parada',
         subtitle: parada.stopId,
@@ -333,7 +333,7 @@ var verAjustes = function() {
   var nuevaDistancia = distancia;
   var subtitle = nuevaDistancia + ' metros';
   var ajustesCard = new UI.Card({
-  	fullscreen: false,
+  	fullscreen: true,
   	backgroundColor: 'blueMoon',
     title: 'Radio de busqueda:',
     subtitle: subtitle,
@@ -375,7 +375,7 @@ var searchWindow = function () {
   var numberSelected = 0;
   
   var title = new UI.Text({
-  	fullscreen: false,
+  	fullscreen: true,
     position: new Vector2(0, 10),         
     size: new Vector2(123, 168),
     text: 'Parada',
@@ -394,7 +394,7 @@ var searchWindow = function () {
   for (var i = 0; i < 4; i++) {
       begin = 5 + (i * 28);
     var number = new UI.Text({
-      fullscreen: false,
+      fullscreen: true,
       position: new Vector2(begin, 60),
       size: new Vector2(25, 40),
       text: stopId[i],
@@ -438,7 +438,7 @@ var searchWindow = function () {
     if (numberSelected === 3) {
       var parada = stopId[0] * 1000 + stopId[1] * 100 + stopId[2] * 10 + stopId[3];
       var checkCard = new UI.Card({
-      	fullscreen: false,
+      	fullscreen: true,
       	backgroundColor: 'black',
         title: 'Próximas llegadas a parada:',
         subtitle: parada,
@@ -491,7 +491,7 @@ var searchWindow = function () {
 // ESTA ES LA ZONA DONDE SE DEFINE E INSTANCIA EL MENÚ PRINCIPAL
 
 var principalMenu = new UI.Menu({
-	fullscreen: false,
+	fullscreen: true,
   backgroundColor: 'white',
   textColor: 'black',
   highlightBackgroundColor: 'blueMoon',
