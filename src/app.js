@@ -16,7 +16,7 @@ var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
 
 var text = new UI.Text({
-  	position: new Vector2(0, 4),         
+  	position: new Vector2(0, 0),         
   	size: new Vector2(144, 168),
   	text: 'Buscando paradas cercanas',
   	font: 'GOTHIC_28_BOLD',
@@ -376,14 +376,14 @@ var searchWindow = function () {
   var numberSelected = 0;
   
   var title = new UI.Text({
-    position: new Vector2(0, 10),         
+    position: new Vector2(0, 0),         
     size: new Vector2(123, 168),
     text: 'Parada',
     font: 'GOTHIC_28_BOLD',
-    color: 'white',
+    color: 'black',
     textOverflow: 'wrap',
     textAlign: 'center',
-    backgroundColor: 'black'
+    backgroundColor: 'white'
   });
   
   inputWindow.add(title);
