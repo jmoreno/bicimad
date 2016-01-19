@@ -18,7 +18,7 @@ splashWindow.fullscreen(true);
 var text = new UI.Text({
   	position: new Vector2(0, 0),         
   	size: new Vector2(144, 168),
-  	text: 'Buscando paradas cercanas',
+  	text: '\nBuscando paradas cercanas',
   	font: 'GOTHIC_28_BOLD',
   	color: 'white',
   	textOverflow: 'wrap',
@@ -107,7 +107,7 @@ var wakeUpHAL = function () {
 
 var proximasLlegadas = function (Parada) {
   
-  text.text('Obteniendo próximas llegadas');
+  text.text('\nObteniendo próximas llegadas');
   splashWindow.add(text);
   splashWindow.show();
   
@@ -378,12 +378,12 @@ var searchWindow = function () {
   var title = new UI.Text({
     position: new Vector2(0, 0),         
     size: new Vector2(123, 168),
-    text: 'Parada',
+    text: '\nParada',
     font: 'GOTHIC_28_BOLD',
-    color: 'black',
+    color: 'white',
     textOverflow: 'wrap',
     textAlign: 'center',
-    backgroundColor: 'white'
+    backgroundColor: 'black'
   });
   
   inputWindow.add(title);
@@ -402,12 +402,12 @@ var searchWindow = function () {
       color: 'white',
       textAlign: 'center',
       borderColor: 'white',
-      backgroundColor: 'blueMoon'
+      backgroundColor: 'black'
     });
     numbers.push(number);
   }
 
-  numbers[numberSelected].color('blueMoon');
+  numbers[numberSelected].color('black');
   numbers[numberSelected].backgroundColor('white');
 
   for (i = 0; i < 4; i++) {
@@ -439,7 +439,7 @@ var searchWindow = function () {
       var parada = stopId[0] * 1000 + stopId[1] * 100 + stopId[2] * 10 + stopId[3];
       var checkCard = new UI.Card({
       	fullscreen: true,
-      	backgroundColor: 'black',
+      	backgroundColor: 'white',
         title: 'Próximas llegadas a parada:',
         subtitle: parada,
         action: {
@@ -450,9 +450,9 @@ var searchWindow = function () {
             
       checkCard.on('click', 'up', function(){
         numbers[numberSelected].color('white');
-        numbers[numberSelected].backgroundColor('blueMoon');
+        numbers[numberSelected].backgroundColor('black');
         numberSelected = 0;
-        numbers[numberSelected].color('blueMoon');
+        numbers[numberSelected].color('black');
         numbers[numberSelected].backgroundColor('white');    
         checkCard.hide();
       });
@@ -471,18 +471,18 @@ var searchWindow = function () {
   
     } else {
       numbers[numberSelected].color('white');
-      numbers[numberSelected].backgroundColor('blueMoon');
+      numbers[numberSelected].backgroundColor('black');
       numberSelected += 1;
-      numbers[numberSelected].color('blueMoon');
+      numbers[numberSelected].color('black');
       numbers[numberSelected].backgroundColor('white');    
     }
   });
   
   inputWindow.on('longClick', 'select', function () {
     numbers[numberSelected].color('white');
-    numbers[numberSelected].backgroundColor('blueMoon');
+    numbers[numberSelected].backgroundColor('black');
     numberSelected = 0;
-    numbers[numberSelected].color('blueMoon');
+    numbers[numberSelected].color('black');
     numbers[numberSelected].backgroundColor('white');    
   });
   
