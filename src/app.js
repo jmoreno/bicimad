@@ -144,7 +144,7 @@ var proximasLlegadas = function (Parada) {
     },
     function(error){
       console.log('Ha ocurrido un error al recuperar las llegadas: ' + error);
-      text.text('Servicio no disponible \nPrueba más tarde');
+      text.text('\nServicio no disponible \nPrueba más tarde');
     }
   );
 };
@@ -152,7 +152,7 @@ var proximasLlegadas = function (Parada) {
 // Datos para la localización
 var paradasCercanas = function () {
   
-  text.text('Buscando paradas cercanas');
+  text.text('\nBuscando paradas cercanas');
   splashWindow.add(text);
   splashWindow.show();
 
@@ -239,14 +239,14 @@ var paradasCercanas = function () {
       },
       function(error) {
         console.log('Ha ocurrido un error al recuperar el listado de paradas: ' + error);
-        text.text('Servicio no disponible \nPrueba más tarde');
+        text.text('\nServicio no disponible \nPrueba más tarde');
       }
     );
   }
 
   function locationError(err) {
     console.log('location error (' + err.code + '): ' + err.message);
-    text.text('Error de conexión \nAbre la app de Pebble en tu teléfono');
+    text.text('\nError de conexión \nAbre la app de Pebble en tu teléfono');
   }
 
   // Make an asynchronous request
@@ -261,7 +261,7 @@ var paradasFavoritas = function() {
   
   if (!favoritos || favoritos.length === 0) {
 
-    text.text('No hay favoritos guardados');
+    text.text('\nNo hay favoritos guardados');
     splashWindow.add(text);
     splashWindow.show();
 
@@ -376,9 +376,9 @@ var searchWindow = function () {
   var numberSelected = 0;
   
   var title = new UI.Text({
-    position: new Vector2(0, 0),         
+    position: new Vector2(0, 10),         
     size: new Vector2(123, 168),
-    text: '\nParada',
+    text: 'Parada',
     font: 'GOTHIC_28_BOLD',
     color: 'white',
     textOverflow: 'wrap',
