@@ -1,5 +1,10 @@
 // Pantalla de busqueda de paradas introduciendo el número de la misma
 
+var UI = require('ui');
+var Vector2  = require('vector2');
+
+var llegadas = require('proximasLlegadas') 
+
 exports.init = function () {
   
   var inputWindow = new UI.Window();
@@ -97,7 +102,7 @@ exports.init = function () {
           stopId: parada,
           postalAddress: ''
         };
-        proximasLlegadas(paradaBuscar);
+        llegadas.proximasLlegadas(paradaBuscar);
         checkCard.hide();
         inputWindow.hide();
       });
