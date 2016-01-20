@@ -3,6 +3,20 @@
 var UI = require('ui');
 var llegadas = require('ajax');
 
+var splashWindow = new UI.Window();
+splashWindow.fullscreen(true);
+
+var text = new UI.Text({
+  	position: new Vector2(0, 0),         
+  	size: new Vector2(144, 168),
+  	text: '\nBuscando paradas cercanas',
+  	font: 'GOTHIC_28_BOLD',
+  	color: 'white',
+  	textOverflow: 'wrap',
+  	textAlign: 'center',
+  	backgroundColor: 'blueMoon'
+});
+
 var parseaLlegadas = function (data) {
   var items = [];
   var arrives = data.arrives;
@@ -34,7 +48,7 @@ var parseaLlegadas = function (data) {
   return items;
 };
 
-exports.proximasLlegadas = function (Parada) {
+exports.init = function (Parada) {
   
   text.text('\nObteniendo próximas llegadas');
   splashWindow.add(text);

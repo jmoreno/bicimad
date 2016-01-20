@@ -3,7 +3,7 @@
 var UI = require('ui');
 var Vector2  = require('vector2');
 
-var llegadas = require('proximasLlegadas') 
+var proximasLlegadas = require('proximasLlegadas');
 
 exports.init = function () {
   
@@ -102,7 +102,7 @@ exports.init = function () {
           stopId: parada,
           postalAddress: ''
         };
-        llegadas.proximasLlegadas(paradaBuscar);
+        proximasLlegadas.init(paradaBuscar);
         checkCard.hide();
         inputWindow.hide();
       });
