@@ -1,7 +1,7 @@
 {
     "appKeys": {},
     "capabilities": [
-        "location", "configurable"
+        "location"
     ],
     "companyName": "Zink In Apps!",
     "longName": "MadridBus Pro",
