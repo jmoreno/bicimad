@@ -5,15 +5,13 @@
  */
 
 var UI = require('ui');
-var Vector2  = require('vector2');
-var Settings = require('settings');
-var Voice = require('ui/voice');
+// var Voice = require('ui/voice');
 var check = require('ajax');
 
-var paradasCercanas = require('paradasCercanas')
-var paradasFavoritas = require('paradasFavoritas')
-var buscarParada = require('buscarParada')
-var ajustes = require('ajustes')
+var paradasCercanas = require('paradasCercanas');
+var paradasFavoritas = require('paradasFavoritas');
+var buscarParada = require('buscarParada');
+var ajustes = require('ajustes');
 
 var wakeUpHAL = function () {
   

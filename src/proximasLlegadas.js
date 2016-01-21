@@ -1,6 +1,7 @@
 // Genera los elementos del menú de paradas cercanas
 
 var UI = require('ui');
+var Vector2  = require('vector2');
 var llegadas = require('ajax');
 
 var splashWindow = new UI.Window();

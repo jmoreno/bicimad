@@ -2,6 +2,8 @@ var UI = require('ui');
 var Vector2  = require('vector2');
 var Settings = require('settings');
 
+var proximasLlegadas = require('proximasLlegadas');
+
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
 
@@ -15,6 +17,21 @@ var text = new UI.Text({
   	textAlign: 'center',
   	backgroundColor: 'blueMoon'
 });
+
+var parseaParadas = function (stops) {
+  var items = [];
+  for (var i = 0; i < stops.length; i++) {
+    var title = stops[i].stopId;
+//    var subtitle = data.stop[i].postalAddress.replace(/\W+/g, " ");
+    var subtitle = stops[i].postalAddress;
+    console.log('Prueba: ' + title + ' ' + subtitle);
+    items.push({
+      title: title,
+      subtitle: subtitle
+    });
+  }                     
+  return items;
+};
 
 exports.init = function() {
   
@@ -44,7 +61,7 @@ exports.init = function() {
     
     paradasMenu.on('select', function(e) {
       var parada = favoritos[e.itemIndex];
-      proximasLlegadas(parada);
+      proximasLlegadas.init(parada);
     });
     
     paradasMenu.on('longSelect', function(e) {
