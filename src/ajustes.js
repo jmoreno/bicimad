@@ -1,14 +1,14 @@
 var UI = require('ui');
 var Settings = require('settings');
 
-var distancia = Settings.data('distancia');
-
-if (!distancia) {
-  distancia = 150;
-  Settings.data('distancia', distancia);
-}
-
 exports.init = function() {
+
+	var distancia = Settings.data('distancia');
+
+	if (!distancia) {
+	  distancia = 150;
+	  Settings.data('distancia', distancia);
+	}
 
   var nuevaDistancia = distancia;
   var subtitle = nuevaDistancia + ' metros';

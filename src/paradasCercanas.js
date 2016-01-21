@@ -19,13 +19,6 @@ var text = new UI.Text({
   	backgroundColor: 'blueMoon'
 });
 
-var distancia = Settings.data('distancia');
-
-if (!distancia) {
-  distancia = 150;
-  Settings.data('distancia', distancia);
-}
-
 var parseaParadas = function (stops) {
   var items = [];
   for (var i = 0; i < stops.length; i++) {
@@ -56,6 +49,14 @@ exports.init = function () {
   };
 
   function locationSuccess(pos) {
+
+		var distancia = Settings.data('distancia');
+
+		if (!distancia) {
+		  distancia = 150;
+		  Settings.data('distancia', distancia);
+		}
+
     var stopsURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stops?latitude=' + pos.coords.latitude + '&longitude=' + pos.coords.longitude + '&radius=' + distancia;
 //    stopsURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stops?latitude=40.413897&longitude=-3.692898&radius=250';
     paradas(
