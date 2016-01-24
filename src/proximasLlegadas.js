@@ -84,7 +84,7 @@ exports.init = function (Parada) {
         
         llegadasMenu.on('select', function(e) {
         	if (e.itemIndex == 0) {
-        		favorita.nuevoFavorito({title: Parada.stopId, subtitle: Parada.postalAddress});
+        		favorito.nuevoFavorito({title: Parada.stopId, subtitle: Parada.postalAddress});
         	}
 		});
     
