@@ -24,14 +24,14 @@ var infoParada = function (element) {
     }
   );
   return element;
-}
+};
 
 var chequeaParada = function (element) {
     if (!element.subtitle ) {
     	element = infoParada(element);
     }
     return element;
-}
+};
 
 // Datos para la localización
 exports.nuevoFavorito = function (element) {
