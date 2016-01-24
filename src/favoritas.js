@@ -23,7 +23,9 @@ var infoParada = function (element) {
 };
 
 var chequeaParada = function (element) {
-    if !('stopId' in element) {
+    if ('stopId' in element) {
+    	return element;
+    } else {
     	element = infoParada(element);
     }
     return element;
