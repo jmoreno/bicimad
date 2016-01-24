@@ -1,6 +1,7 @@
 var UI = require('ui');
 var Vector2  = require('vector2');
 var paradas = require('ajax');
+var Settings = require('settings');
 var proximasLlegadas = require('proximasLlegadas');
 var colores = require('colores');
 var favorito = require('favoritas');

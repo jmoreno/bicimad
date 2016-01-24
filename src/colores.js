@@ -24,7 +24,7 @@ export.backgroundColor = function () {
 		Settings.data('backgroundColor', backgroundColor);
 	}
 	return backgroundColor;
-}
+};
 
 exports.init = function() {
 	

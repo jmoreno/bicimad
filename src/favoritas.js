@@ -23,11 +23,11 @@ function infoParada(element) {
       console.log('Ha ocurrido un error al recuperar la información de la parada: ' + error);
     }
   );
-  return element
+  return element;
 }
 
 function chequeaParada(element) {
-    if (!element.subtitle) {
+    if (!element.subtitle ) {
     	element = infoParada(element);
     }
     return element;

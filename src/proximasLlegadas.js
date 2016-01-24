@@ -4,6 +4,7 @@ var UI = require('ui');
 var Vector2  = require('vector2');
 var llegadas = require('ajax');
 var colores = require('colores');
+var favorito = require('favoritas');
 
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
@@ -80,6 +81,12 @@ exports.init = function (Parada) {
             items: llegadasMenuItems
           }]
         }); 
+        
+        llegadasMenu.on('select', function(e) {
+        	if (e.itemIndex == 0) {
+        		favorita.nuevoFavorito({title: Parada.stopId, subtitle: Parada.postalAddress});
+        	}
+		});
     
         llegadasMenu.show();
         splashWindow.hide();
