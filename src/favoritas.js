@@ -3,9 +3,6 @@ var infoParada = require('ajax');
 var Settings = require('settings');
 var colores = require('colores');
 
-var splashWindow = new UI.Window();
-splashWindow.fullscreen(true);
-
 var infoParada = function (element) {
   var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.title;
   infoParada(
@@ -44,7 +41,7 @@ exports.nuevoFavorito = function (element) {
 
 	var favoritoCard = new UI.Card({
 		fullscreen: true,
-		backgroundColor: colores.backgroundColor(),
+//		backgroundColor: colores.backgroundColor(),
 		title: 'Guardar parada',
 		subtitle: element.title,
 		action: {
