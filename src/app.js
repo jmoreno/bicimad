@@ -20,7 +20,7 @@ var backgroundColor = Settings.data('backgroundColor');
 if (!backgroundColor) {
 	backgroundColor = 'blueMoon';
 	Settings.data('backgroundColor', backgroundColor);
-};
+}
 
 var wakeUpHAL = function () {
   
@@ -86,18 +86,13 @@ principalMenu.on('select', function(e) {
     default:
       paradasCercanas();
   }
-});
-      
+});      
 
 principalMenu.on('longSelect', function(e) {
-  switch (e.itemIndex) {
-    case 3:
-      colores.init();
-      break;
-
-    default:
-      break;
+  if (e.itemIndex == 3) {
+  	colores.init();
   }
 });
+
 wakeUpHAL();      
 principalMenu.show();
