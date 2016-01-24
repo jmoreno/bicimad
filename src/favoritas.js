@@ -7,7 +7,7 @@ var backgroundColor = Settings.data('backgroundColor');
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
 
-function infoParada(element) {
+var infoParada = function (element) {
   var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.title;
   infoParada(
     {
@@ -26,7 +26,7 @@ function infoParada(element) {
   return element;
 }
 
-function chequeaParada(element) {
+var chequeaParada = function (element) {
     if (!element.subtitle ) {
     	element = infoParada(element);
     }

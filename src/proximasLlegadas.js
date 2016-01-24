@@ -83,10 +83,7 @@ exports.init = function (Parada) {
         }); 
         
         llegadasMenu.on('select', function(e) {
-        	if (e.itemIndex == 0) {
-        		console.log('Prueba');
-        	}
-        	if (e.itemIndex == 0) {
+        	if (e.sectionIndex == 0 && e.itemIndex == 0) {
         		favorito.nuevoFavorito({title: Parada.stopId, subtitle: Parada.postalAddress});
         	}
         });
