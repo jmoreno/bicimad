@@ -69,7 +69,6 @@ exports.init = function() {
 
       var favoritoCard = new UI.Card({
       	fullscreen: true,
-      	backgroundColor: colores.backgroundColor(),
         title: 'Borrar parada',
         subtitle: parada.stopId,
         action: {

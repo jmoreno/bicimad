@@ -12,7 +12,7 @@ var infoParada = function (element) {
     },
     function(data) {
       if ('stops' in data) {
-      	element.subtitle = data.stops[0].postalAddress;
+      	element = data.stops[0];
       }
     },
     function(error){
@@ -23,7 +23,7 @@ var infoParada = function (element) {
 };
 
 var chequeaParada = function (element) {
-    if (!element.subtitle || element.subtitle.lenght === 0) {
+    if !('stopId' in element) {
     	element = infoParada(element);
     }
     return element;
@@ -43,7 +43,7 @@ exports.nuevoFavorito = function (element) {
 		fullscreen: true,
 //		backgroundColor: colores.backgroundColor(),
 		title: 'Guardar parada',
-		subtitle: element.title,
+		subtitle: element.stopId,
 		action: {
 			up: 'images/action_icon_discard.png',
 			down: 'images/action_icon_check.png'
