@@ -7,11 +7,20 @@
 var UI = require('ui');
 // var Voice = require('ui/voice');
 var check = require('ajax');
+var Settings = require('settings');
 
 var paradasCercanas = require('paradasCercanas');
 var paradasFavoritas = require('paradasFavoritas');
 var buscarParada = require('buscarParada');
 var ajustes = require('ajustes');
+var colores = require('colores');
+
+var backgroundColor = Settings.data('backgroundColor');
+
+if (!backgroundColor) {
+	backgroundColor = 'blueMoon';
+	Settings.data('backgroundColor', backgroundColor);
+};
 
 var wakeUpHAL = function () {
   
@@ -36,7 +45,7 @@ var principalMenu = new UI.Menu({
 	fullscreen: true,
   backgroundColor: 'white',
   textColor: 'black',
-  highlightBackgroundColor: 'blueMoon',
+  highlightBackgroundColor: backgroundColor,
   highlightTextColor: 'white',
   sections: [{
     title: 'Paradas de la EMT',
@@ -79,5 +88,16 @@ principalMenu.on('select', function(e) {
   }
 });
       
+
+principalMenu.on('longSelect', function(e) {
+  switch (e.itemIndex) {
+    case 3:
+      colores.init();
+      break;
+
+    default:
+      break;
+  }
+});
 wakeUpHAL();      
 principalMenu.show();

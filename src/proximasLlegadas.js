@@ -3,6 +3,9 @@
 var UI = require('ui');
 var Vector2  = require('vector2');
 var llegadas = require('ajax');
+var Settings = require('settings');
+
+var backgroundColor = Settings.data('backgroundColor');
 
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
@@ -15,7 +18,7 @@ var text = new UI.Text({
   	color: 'white',
   	textOverflow: 'wrap',
   	textAlign: 'center',
-  	backgroundColor: 'blueMoon'
+  	backgroundColor: backgroundColor
 });
 
 var parseaLlegadas = function (data) {
@@ -68,7 +71,7 @@ exports.init = function (Parada) {
         	fullscreen: true,
         	backgroundColor: 'white',
         	textColor: 'black',
-        	highlightBackgroundColor: 'blueMoon',
+        	highlightBackgroundColor: backgroundColor,
         	highlightTextColor: 'white',
           sections: [{
             title: 'Datos de la parada',

@@ -4,6 +4,8 @@ var Settings = require('settings');
 
 var proximasLlegadas = require('proximasLlegadas');
 
+var backgroundColor = Settings.data('backgroundColor');
+
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
 
@@ -15,7 +17,7 @@ var text = new UI.Text({
   	color: 'white',
   	textOverflow: 'wrap',
   	textAlign: 'center',
-  	backgroundColor: 'blueMoon'
+  	backgroundColor: backgroundColor
 });
 
 var parseaParadas = function (stops) {
@@ -51,7 +53,7 @@ exports.init = function() {
     	fullscreen: true,
     	backgroundColor: 'white',
         textColor: 'black',
-        highlightBackgroundColor: 'blueMoon',
+        highlightBackgroundColor: backgroundColor,
         highlightTextColor: 'white',
       	sections: [{
       		title: 'Favoritas',
@@ -69,7 +71,7 @@ exports.init = function() {
 
       var favoritoCard = new UI.Card({
       	fullscreen: true,
-      	backgroundColor: 'blueMoon',
+      	backgroundColor: backgroundColor,
         title: 'Borrar parada',
         subtitle: parada.stopId,
         action: {
