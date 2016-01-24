@@ -16,7 +16,7 @@ var cargaMenu = function () {
   return items;
 };
 
-export.backgroundColor = function () {
+exports.backgroundColor = function () {
     var backgroundColor = Settings.data('backgroundColor');
 
 	if (!backgroundColor) {
