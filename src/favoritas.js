@@ -1,8 +1,7 @@
 var UI = require('ui');
 var infoParada = require('ajax');
 var Settings = require('settings');
-
-var backgroundColor = Settings.data('backgroundColor');
+var colores = require('colores');
 
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
@@ -27,7 +26,7 @@ var infoParada = function (element) {
 };
 
 var chequeaParada = function (element) {
-    if (!element.subtitle ) {
+    if (!element.subtitle || element.subtitle.lenght === 0) {
     	element = infoParada(element);
     }
     return element;
@@ -45,9 +44,9 @@ exports.nuevoFavorito = function (element) {
 
 	var favoritoCard = new UI.Card({
 		fullscreen: true,
-		backgroundColor: backgroundColor,
+		backgroundColor: colores.backgroundColor(),
 		title: 'Guardar parada',
-		subtitle: parada.stopId,
+		subtitle: element.title,
 		action: {
 			up: 'images/action_icon_discard.png',
 			down: 'images/action_icon_check.png'
