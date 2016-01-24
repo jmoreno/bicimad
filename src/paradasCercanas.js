@@ -1,11 +1,9 @@
 var UI = require('ui');
 var Vector2  = require('vector2');
 var paradas = require('ajax');
-var Settings = require('settings');
-
 var proximasLlegadas = require('proximasLlegadas');
-
-var backgroundColor = Settings.data('backgroundColor');
+var colores = require('colores');
+var favorito = require('favoritas');
 
 var splashWindow = new UI.Window();
 splashWindow.fullscreen(true);
@@ -18,7 +16,7 @@ var text = new UI.Text({
   	color: 'white',
   	textOverflow: 'wrap',
   	textAlign: 'center',
-  	backgroundColor: backgroundColor
+  	backgroundColor: colores.backgroundColor()
 });
 
 var parseaParadas = function (stops) {
@@ -80,7 +78,7 @@ exports.init = function () {
           	fullscreen: true,
 						backgroundColor: 'white',
 						textColor: 'black',
-						highlightBackgroundColor: backgroundColor,
+						highlightBackgroundColor: colores.backgroundColor(),
 						highlightTextColor: 'white',
             sections: [{
               title: 'Paradas cercanas',
@@ -94,36 +92,7 @@ exports.init = function () {
           });
       
           paradasMenu.on('longSelect', function(e) {
-            var favoritos = Settings.data('favoritos');
-            if (!favoritos) {
-              favoritos = [];
-            }
-            
-            var parada = stops[e.itemIndex];
-
-            var favoritoCard = new UI.Card({
-            	fullscreen: true,
-            	backgroundColor: backgroundColor,
-	            title: 'Guardar parada',
-                subtitle: parada.stopId,
-                action: {
-                	up: 'images/action_icon_discard.png',
-                	down: 'images/action_icon_check.png'
-              	}
-            });
-            
-            favoritoCard.on('click', 'up', function(){
-              favoritoCard.hide();
-            });
-            
-            favoritoCard.on('click', 'down', function(){
-              favoritos.push(parada);
-              Settings.data('favoritos', favoritos);
-              favoritoCard.hide();
-            });
-            
-            favoritoCard.show();
-
+          	favorito.nuevoFavorito(stops[e.itemIndex]);
           });
       
           paradasMenu.show();

@@ -16,6 +16,16 @@ var cargaMenu = function () {
   return items;
 };
 
+export.backgroundColor = function () {
+    var backgroundColor = Settings.data('backgroundColor');
+
+	if (!backgroundColor) {
+		backgroundColor = 'black';
+		Settings.data('backgroundColor', backgroundColor);
+	}
+	return backgroundColor;
+}
+
 exports.init = function() {
 	
 	var backgroundColor = Settings.data('backgroundColor');
