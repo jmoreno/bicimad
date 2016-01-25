@@ -27,8 +27,8 @@ var getInfoParada = function (element) {
 
 var chequeaParada = function (element) {
   var elementChequeado = element;
-  elementChequeado.postalAddress = 'largo: ' + element.postalAddress.length;
   if (element.postalAddress.length === 0) {
+      elementChequeado.postalAddress = 'Sin dirección 0';
     elementChequeado = getInfoParada(element);
   }
   return elementChequeado;
