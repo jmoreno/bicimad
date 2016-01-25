@@ -57,9 +57,6 @@ exports.init = function (Parada) {
   splashWindow.show();
   
   var arrivesURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/arrives/' + Parada.stopId;
-  
-  console.log(arrivesURL);
-  
   llegadas(
     {
       url: arrivesURL,

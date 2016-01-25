@@ -22,7 +22,7 @@ var parseaParadas = function (stops) {
   var items = [];
   for (var i = 0; i < stops.length; i++) {
     var title = stops[i].stopId;
-    console.log('Favorito: ' + JSON.stringify(stops[i]));
+//    console.log('Favorito: ' + JSON.stringify(stops[i]));
     var subtitle = stops[i].postalAddress;
     items.push({
       title: title,

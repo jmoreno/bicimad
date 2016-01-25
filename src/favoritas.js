@@ -2,49 +2,17 @@ var UI = require('ui');
 var infoParada = require('ajax');
 var Settings = require('settings');
 
-var getInfoParada = function (element) {
-  var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.stopId;
-  var elementChequeado = element;
-  infoParada(
-    {
-      url: infoParadaURL,
-      type: 'json'
-    },
-    function(data) {
-      if ('stops' in data) {
-      	elementChequeado = data.stops;
-      	return elementChequeado;
-      }
-    },
-    function(error){
-      console.log('Ha ocurrido un error al recuperar la información de la parada: ' + error);
-    }
-  );
-  return elementChequeado;
-};
+var guardaFavorito = function (parada) {
 
-var chequeaParada = function (element) {
-  var elementChequeado = element;
-  if (element.postalAddress.length === 0) {
-    elementChequeado = getInfoParada(element);
-  }
-  return elementChequeado;
-};
-
-// Datos para la localización
-exports.nuevoFavorito = function (element) {
-	
 	var favoritos = Settings.data('favoritos');
 	if (!favoritos) {
 		favoritos = [];
 	}
 	
-	var parada = chequeaParada(element);
-
-	var favoritoCard = new UI.Card({
+  var favoritoCard = new UI.Card({
 		fullscreen: true,
 		title: 'Guardar parada',
-		subtitle: element.stopId,
+		subtitle: parada.stopId,
 		action: {
 			up: 'images/action_icon_discard.png',
 			down: 'images/action_icon_check.png'
@@ -62,6 +30,35 @@ exports.nuevoFavorito = function (element) {
 	});
 	
 	favoritoCard.show();
+
+};
+
+var getInfoParada = function (parada) {
+  var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + parada.stopId;
+  infoParada(
+    {
+      url: infoParadaURL,
+      type: 'json'
+    },
+    function(data) {
+      if ('stops' in data) {
+        guardaFavorito(data.stops);
+      }
+    },
+    function(error){
+      console.log('Ha ocurrido un error al recuperar la información de la parada: ' + error);
+    }
+  );
+};
+
+
+exports.nuevoFavorito = function (element) {
+	
+  if (element.postalAddress.length === 0) {
+    getInfoParada(element);
+  } else {
+    guardaFavorito(element);
+  }
 
 };
 
