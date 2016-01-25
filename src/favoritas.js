@@ -12,7 +12,6 @@ var getInfoParada = function (element) {
     },
     function(data) {
       if ('stops' in data) {
-      	elementChequeado.postalAddress = 'Mierda';
       	elementChequeado = data.stops;
       }
     },
