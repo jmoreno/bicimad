@@ -5,17 +5,20 @@ var Settings = require('settings');
 var getInfoParada = function (element) {
   var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.stopId;
   var elementChequeado = element;
+  elementChequeado.postalAddress = 'Sin dirección 1';
   infoParada(
     {
       url: infoParadaURL,
       type: 'json'
     },
     function(data) {
+      elementChequeado.postalAddress = 'Sin dirección 2';
       if ('stops' in data) {
       	elementChequeado = data.stops;
       }
     },
     function(error){
+      elementChequeado.postalAddress = 'Sin dirección 3';
       console.log('Ha ocurrido un error al recuperar la información de la parada: ' + error);
     }
   );
@@ -24,6 +27,7 @@ var getInfoParada = function (element) {
 
 var chequeaParada = function (element) {
   var elementChequeado = element;
+  elementChequeado.postalAddress = 'Sin dirección 0';
   if (element.postalAddress.length === 0) {
     elementChequeado = getInfoParada(element);
   }
