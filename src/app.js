@@ -14,10 +14,6 @@ var buscarParada = require('buscarParada');
 var ajustes = require('ajustes');
 var colores = require('colores');
 
-// a la desesperada
-var settings = require('settings');
-settings.data('favoritos', []);
-
 var wakeUpHAL = function () {
   
   var checkURL = 'http://zinkinapis.zinkinapps.com/HelloHALDoyoureadmeHAL';
