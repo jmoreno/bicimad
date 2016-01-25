@@ -15,7 +15,7 @@ var ajustes = require('ajustes');
 var colores = require('colores');
 
 // a la desesperada
-var settings = require('settings'),
+var settings = require('settings');
 settings.data('favoritos', []);
 
 var wakeUpHAL = function () {
