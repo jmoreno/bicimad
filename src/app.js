@@ -13,6 +13,7 @@ var paradasFavoritas = require('paradasFavoritas');
 var buscarParada = require('buscarParada');
 var ajustes = require('ajustes');
 var colores = require('colores');
+var favoritos = require('favoritas');
 
 var wakeUpHAL = function () {
   
@@ -83,6 +84,8 @@ principalMenu.on('select', function(e) {
 principalMenu.on('longSelect', function(e) {
   if (e.itemIndex == 3) {
   	colores.init();
+  } else if (e.itemIndex == 1) {
+    favoritos.borrarFavoritos();
   }
 });
 

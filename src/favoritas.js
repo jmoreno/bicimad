@@ -3,7 +3,7 @@ var infoParada = require('ajax');
 var Settings = require('settings');
 var colores = require('colores');
 
-var infoParada = function (element) {
+var getInfoParada = function (element) {
   var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.stopId;
   var elementChequeado = element;
   infoParada(
@@ -26,7 +26,7 @@ var infoParada = function (element) {
 var chequeaParada = function (element) {
   var elementChequeado = element;
   if (element.postalAddress.length === 0) {
-    elementChequeado = infoParada(element);
+    elementChequeado = getInfoParada(element);
   }
   return elementChequeado;
 };
@@ -43,7 +43,7 @@ exports.nuevoFavorito = function (element) {
 
 	var favoritoCard = new UI.Card({
 		fullscreen: true,
-//		backgroundColor: colores.backgroundColor(),
+		backgroundColor: colores.backgroundColor(),
 		title: 'Guardar parada',
 		subtitle: element.stopId,
 		action: {
@@ -59,6 +59,33 @@ exports.nuevoFavorito = function (element) {
 	favoritoCard.on('click', 'down', function(){
 		favoritos.push(parada);
 		Settings.data('favoritos', favoritos);
+		favoritoCard.hide();
+	});
+	
+	favoritoCard.show();
+
+};
+
+// Datos para la localización
+exports.borrarFavoritos = function () {
+	
+	var favoritoCard = new UI.Card({
+		fullscreen: true,
+		backgroundColor: colores.backgroundColor(),
+		title: '¿Borrar lista de favoritos?',
+		action: {
+			up: 'images/action_icon_discard.png',
+			down: 'images/action_icon_check.png'
+		}
+	});
+	
+	favoritoCard.on('click', 'up', function(){
+		favoritoCard.hide();
+	});
+
+	favoritoCard.on('click', 'down', function(){
+		favoritos.push(parada);
+		Settings.data('favoritos', []);
 		favoritoCard.hide();
 	});
 	
