@@ -22,9 +22,8 @@ var parseaParadas = function (stops) {
   var items = [];
   for (var i = 0; i < stops.length; i++) {
     var title = stops[i].stopId;
-//    var subtitle = data.stop[i].postalAddress.replace(/\W+/g, " ");
+    console.log('Favorito: ' + JSON.stringify(stops[i]));
     var subtitle = stops[i].postalAddress;
-    console.log('Prueba: ' + title + ' ' + subtitle);
     items.push({
       title: title,
       subtitle: subtitle

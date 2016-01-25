@@ -6,20 +6,6 @@ var llegadas = require('ajax');
 var colores = require('colores');
 var favorito = require('favoritas');
 
-var splashWindow = new UI.Window();
-splashWindow.fullscreen(true);
-
-var text = new UI.Text({
-  	position: new Vector2(0, 0),         
-  	size: new Vector2(144, 168),
-  	text: '\nBuscando paradas cercanas',
-  	font: 'GOTHIC_28_BOLD',
-  	color: 'white',
-  	textOverflow: 'wrap',
-  	textAlign: 'center',
-  	backgroundColor: colores.backgroundColor()
-});
-
 var parseaLlegadas = function (data) {
   var items = [];
   var arrives = data.arrives;
@@ -53,11 +39,27 @@ var parseaLlegadas = function (data) {
 
 exports.init = function (Parada) {
   
-  text.text('\nObteniendo próximas llegadas');
+  var splashWindow = new UI.Window();
+  splashWindow.fullscreen(true);
+
+  var text = new UI.Text({
+  	position: new Vector2(0, 0),         
+  	size: new Vector2(144, 168),
+  	text: '\nObteniendo próximas llegadas',
+  	font: 'GOTHIC_28_BOLD',
+  	color: 'white',
+  	textOverflow: 'wrap',
+  	textAlign: 'center',
+  	backgroundColor: colores.backgroundColor()
+  });
+
   splashWindow.add(text);
   splashWindow.show();
   
   var arrivesURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/arrives/' + Parada.stopId;
+  
+  console.log(arrivesURL);
+  
   llegadas(
     {
       url: arrivesURL,

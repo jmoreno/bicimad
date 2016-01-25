@@ -4,7 +4,8 @@ var Settings = require('settings');
 var colores = require('colores');
 
 var infoParada = function (element) {
-  var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.title;
+  var infoParadaURL = 'http://zinkinapis.zinkinapps.com/emtmadrid/stopInfo/' + element.stopId;
+  var elementChequeado = element;
   infoParada(
     {
       url: infoParadaURL,
@@ -12,23 +13,22 @@ var infoParada = function (element) {
     },
     function(data) {
       if ('stops' in data) {
-      	element = data.stops[0];
+      	elementChequeado = data.stops[0];
       }
     },
     function(error){
       console.log('Ha ocurrido un error al recuperar la información de la parada: ' + error);
     }
   );
-  return element;
+  return elementChequeado;
 };
 
 var chequeaParada = function (element) {
-    if ('stopId' in element) {
-    	return element;
-    } else {
-    	element = infoParada(element);
-    }
-    return element;
+  var elementChequeado = element;
+  if (element.postalAddress.length === 0) {
+    elementChequeado = infoParada(element);
+  }
+  return elementChequeado;
 };
 
 // Datos para la localización
