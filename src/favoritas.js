@@ -13,6 +13,7 @@ var getInfoParada = function (element) {
     function(data) {
       if ('stops' in data) {
       	elementChequeado = data.stops;
+      	console.log('elementChequeado: ' + JSON.stringify(elementChequeado));
       }
     },
     function(error){
