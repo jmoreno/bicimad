@@ -10,6 +10,7 @@
         "media": [
             {
                 "file": "images/menu_icon.png",
+                "menuIcon": true,
                 "name": "IMAGE_MENU_ICON",
                 "type": "bitmap"
             },
@@ -29,55 +30,54 @@
                 "type": "font"
             },
             {
-                "file": "images/menu_icon_starred.png",
-                "name": "IMAGES_MENU_ICON_STARRED_PNG",
-                "type": "png"
-            },
-            {
                 "file": "images/menu_icon_settings.png",
                 "name": "IMAGES_MENU_ICON_SETTINGS_PNG",
-                "type": "png"
+                "type": "bitmap"
+            },
+            {
+                "file": "images/menu_icon_starred.png",
+                "name": "IMAGES_MENU_ICON_STARRED_PNG",
+                "type": "bitmap"
             },
             {
                 "file": "images/menu_icon_search.png",
                 "name": "IMAGES_MENU_ICON_SEARCH_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/menu_icon_location.png",
                 "name": "IMAGES_MENU_ICON_LOCATION_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/main_icon_bus.png",
-                "menuIcon": true,
                 "name": "IMAGES_MAIN_ICON_BUS_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/action_icon_plus.png",
                 "name": "IMAGES_ACTION_ICON_PLUS_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/action_icon_next.png",
                 "name": "IMAGES_ACTION_ICON_NEXT_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/action_icon_minus.png",
                 "name": "IMAGES_ACTION_ICON_MINUS_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/action_icon_discard.png",
                 "name": "IMAGES_ACTION_ICON_DISCARD_PNG",
-                "type": "png"
+                "type": "bitmap"
             },
             {
                 "file": "images/action_icon_check.png",
                 "name": "IMAGES_ACTION_ICON_CHECK_PNG",
-                "type": "png"
+                "type": "bitmap"
             }
         ]
     },
@@ -89,7 +89,7 @@
     ],
     "uuid": "5683d63f-fb05-43bf-818e-dc865ca6db50",
     "versionCode": 1,
-    "versionLabel": "1.2",
+    "versionLabel": "1.4",
     "watchapp": {
         "hiddenApp": false,
         "watchface": false
