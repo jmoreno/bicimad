@@ -4,7 +4,7 @@
         "location"
     ],
     "companyName": "Zink In Apps!",
-    "longName": "MadridBus Pro",
+    "longName": "MadridBici",
     "projectType": "pebblejs",
     "resources": {
         "media": [
@@ -81,15 +81,15 @@
             }
         ]
     },
-    "sdkVersion": "3",
-    "shortName": "MadridBus Pro",
+    "sdkVersion": "4",
+    "shortName": "MadridBici",
     "targetPlatforms": [
         "aplite",
         "basalt"
     ],
     "uuid": "5683d63f-fb05-43bf-818e-dc865ca6db50",
     "versionCode": 1,
-    "versionLabel": "1.4",
+    "versionLabel": "1.1",
     "watchapp": {
         "hiddenApp": false,
         "watchface": false
