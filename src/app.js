@@ -1,16 +1,8 @@
-/**
- * Welcome to Pebble.js!
- *
- * This is where you write your app.
- */
-
 var UI = require('ui');
-// var Voice = require('ui/voice');
 var check = require('ajax');
 
-var paradasCercanas = require('paradasCercanas');
-var paradasFavoritas = require('paradasFavoritas');
-var buscarParada = require('buscarParada');
+var estacionesCercanas = require('estacionesCercanas');
+var estacionesFavoritas = require('estacionesFavoritas');
 var ajustes = require('ajustes');
 var colores = require('colores');
 var favoritos = require('favoritas');
@@ -41,16 +33,13 @@ var principalMenu = new UI.Menu({
   highlightBackgroundColor: colores.backgroundColor(),
   highlightTextColor: 'white',
   sections: [{
-    title: 'Paradas de la EMT',
+    title: 'Estaciones de BiciMAD',
     items: [{
       title: 'Cercanas',
       icon: 'images/menu_icon_location.png'
     }, {
       title: 'Favoritas',
       icon: 'images/menu_icon_starred.png'
-    }, {
-      title: 'Buscar',
-      icon: 'images/menu_icon_search.png'
     }, {
       title: 'Ajustes',
       icon: 'images/menu_icon_settings.png'
@@ -61,23 +50,19 @@ var principalMenu = new UI.Menu({
 principalMenu.on('select', function(e) {
   switch (e.itemIndex) {
     case 0:
-      paradasCercanas.init();
+      estacionesCercanas.init();
       break;
 
     case 1:
-      paradasFavoritas.init();
+      estacionesFavoritas.init();
       break;
 
     case 2:
-      buscarParada.init();
-      break;
-
-    case 3:
       ajustes.init();
       break;
 
     default:
-      paradasCercanas();
+      estacionesCercanas();
   }
 });      
 
